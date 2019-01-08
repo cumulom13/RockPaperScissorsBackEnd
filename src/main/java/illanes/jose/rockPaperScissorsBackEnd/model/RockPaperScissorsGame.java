@@ -1,5 +1,6 @@
 package illanes.jose.rockPaperScissorsBackEnd.model;
 
+import illanes.jose.rockPaperScissorsBackEnd.enumerations.RockPaperScissors;
 import illanes.jose.rockPaperScissorsBackEnd.exceptions.MalformedGameException;
 import org.springframework.stereotype.Component;
 
@@ -19,11 +20,11 @@ public class RockPaperScissorsGame {
 	 * @throws MalformedGameException if the player 1 choice is not a valid value.
 	 */
 	public int playAGame(String player1Choice) throws MalformedGameException {
-		if (player1Choice.equals("Rock")) {
+		if (RockPaperScissors.ROCK.getValue().equals(player1Choice)) {
 			return 0;
-		} else if (player1Choice.equals("Scissors")) {
+		} else if (RockPaperScissors.SCISSORS.getValue().equals(player1Choice)) {
 			return 2;
-		} else if (player1Choice.equals("Paper")) {
+		} else if (RockPaperScissors.PAPER.getValue().equals(player1Choice)) {
 			return 1;
 		}
 		throw new MalformedGameException(player1Choice);
@@ -38,13 +39,13 @@ public class RockPaperScissorsGame {
 		int randomNumber = generateRandomNumber();
 		switch (randomNumber) {
 			case 0:
-				return "Rock";
+				return RockPaperScissors.ROCK.getValue();
 			case 1:
-				return "Paper";
+				return RockPaperScissors.PAPER.getValue();
 			case 2:
-				return "Scissors";
+				return RockPaperScissors.SCISSORS.getValue();
 			default:
-				return "Rock ";
+				return RockPaperScissors.ROCK.getValue();
 		}
 	}
 

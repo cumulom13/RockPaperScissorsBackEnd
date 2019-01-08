@@ -1,6 +1,6 @@
 package illanes.jose.rockPaperScissorsBackEnd.exceptions;
 
-public class MalformedGameException extends Throwable {
+public class MalformedGameException extends Exception {
 
 	String errorMessage;
 

@@ -1,7 +1,7 @@
 package illanes.jose.rockPaperScissorsBackEnd.model;
 
+import illanes.jose.rockPaperScissorsBackEnd.enumerations.RockPaperScissors;
 import illanes.jose.rockPaperScissorsBackEnd.exceptions.MalformedGameException;
-import illanes.jose.rockPaperScissorsBackEnd.model.RockPaperScissorsGame;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -30,11 +30,10 @@ public class RockPaperScissorsGameTest {
 		assertThat(player1Choice.isEmpty(), is(false));
 	}
 
-
 	@Test
 	public void shouldReturnADraw() throws MalformedGameException {
 		//Given
-		String player1Choice = "Rock";
+		String player1Choice = RockPaperScissors.ROCK.getValue();
 
 		// When
 		int result = underTest.playAGame(player1Choice);
@@ -43,11 +42,10 @@ public class RockPaperScissorsGameTest {
 		assertThat(result, is(0));
 	}
 
-
 	@Test
 	public void player1ShouldBeTheWinner() throws MalformedGameException {
 		//Given
-		String player1Choice = "Paper";
+		String player1Choice = RockPaperScissors.PAPER.getValue();
 
 		// When
 		int result = underTest.playAGame(player1Choice);
@@ -56,11 +54,10 @@ public class RockPaperScissorsGameTest {
 		assertThat(result, is(1));
 	}
 
-
 	@Test
 	public void player2ShouldBeTheWinner() throws MalformedGameException {
 		//Given
-		String player1Choice = "Scissors";
+		String player1Choice = RockPaperScissors.SCISSORS.getValue();
 
 		// When
 		int result = underTest.playAGame(player1Choice);

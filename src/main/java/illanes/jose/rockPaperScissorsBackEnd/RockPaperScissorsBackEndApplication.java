@@ -9,6 +9,5 @@ public class RockPaperScissorsBackEndApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(RockPaperScissorsBackEndApplication.class, args);
 	}
-
 }
 
